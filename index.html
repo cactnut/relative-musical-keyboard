@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>相対的キーボード</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ヘッダー: コントロール -->
+  <header>
+    <div class="controls">
+      <button id="audioToggle" class="control-btn">🔇 Audio OFF</button>
+      <button id="modeToggle" class="control-btn">Mode: Follow</button>
+      <button id="scaleToggle" class="control-btn">Scale: Chromatic</button>
+      <select id="rootSelect" class="control-select">
+        <option value="48">C2</option>
+        <option value="60" selected>C3</option>
+        <option value="72">C4</option>
+        <option value="84">C5</option>
+        <option value="96">C6</option>
+      </select>
+      <button id="resetBtn" class="control-btn">Reset</button>
+      <button id="undoBtn" class="control-btn" disabled>Undo</button>
+    </div>
+  </header>
+
+  <!-- ステータス表示 -->
+  <div class="status-display">
+    <div class="status-item">
+      <span class="status-label">Current:</span>
+      <span id="currentNote">C3 (60)</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Mode:</span>
+      <span id="currentMode">Follow</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Scale:</span>
+      <span id="currentScale">Chromatic</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Root:</span>
+      <span id="currentRoot">C3</span>
+    </div>
+  </div>
+
+  <!-- キーボード: 25個のキー -->
+  <div class="keyboard-container">
+    <div class="keyboard" id="keyboard">
+      <!-- JavaScriptで動的に生成 -->
+    </div>
+  </div>
+
+  <!-- フッター: 情報表示 -->
+  <footer>
+    <div class="footer-info">
+      <span>Latency: <span id="latency">--</span>ms</span>
+      <button id="keyboardToggle" class="control-btn">⌨️ Keyboard: ON</button>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
